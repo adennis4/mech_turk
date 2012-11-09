@@ -1,4 +1,6 @@
 MechTurk::Application.routes.draw do
+  get "advertisements/show"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

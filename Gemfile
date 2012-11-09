@@ -8,11 +8,11 @@ gem 'haml-rails', '~> 0.3.4'
 
 group :development do
   gem 'sqlite3', '~> 1.3.5'
-  gem 'rspec-rails', '~> 2.10.0'
 end
 
 group :development, :test do
   gem 'pry-rails'
+  gem 'rspec-rails', '~> 2.10.0'
 end
 
 
