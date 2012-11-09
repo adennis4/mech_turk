@@ -1,2 +1,7 @@
-%h1 Advertisements#show
-%p Find me in app/views/advertisements/show.html.haml
+=@advertisement.name
+=@advertisement.description
+
+-unless @questions.empty?
+  -@questions.each do |question|
+    %p
+      =question.description
