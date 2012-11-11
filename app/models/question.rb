@@ -4,5 +4,6 @@ class Question < ActiveRecord::Base
   validates :description, :presence => true
 
   belongs_to :advertisement
+  has_many :answers
 
 end
