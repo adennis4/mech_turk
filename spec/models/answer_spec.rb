@@ -7,7 +7,11 @@ describe Answer do
     end
 
     it 'requires a question_id' do
-      Answer.new(:response => "Yes", :question_id => nil).should_not be_valid
+      Answer.new(:response => 'Yes', :question_id => nil).should_not be_valid
+    end
+
+    it 'has a max response length of 10' do
+      Answer.new(:response => 'This is too long', :question_id => 1).should_not be_valid
     end
   end
 
@@ -16,5 +20,4 @@ describe Answer do
       Answer.new.should respond_to(:question)
     end
   end
-
 end

@@ -17,5 +17,4 @@ describe Advertisement do
       Advertisement.new.should respond_to(:questions)
     end
   end
-
 end

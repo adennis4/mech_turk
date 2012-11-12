@@ -1,7 +1,11 @@
 =@advertisement.name
 =@advertisement.description
 
--unless @questions.empty?
-  -@questions.each do |question|
+-unless @advertisement.questions.empty?
+  -@advertisement.questions.each do |question|
     %p
       =question.description
+    =form_for @answer do |f|
+      =f.label :response
+      =f.text_field :response
+      =f.submit
