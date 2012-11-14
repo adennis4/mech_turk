@@ -1,6 +1,8 @@
 class AnswersController < ApplicationController
   def create
-    Answer.create(:response => params[:answer][:response], :question_id => 1)
+    Answer.create(:quality_response => params[:answer][:quality_response],
+                  :quantity_response => params[:answer][:quantity_response],
+                  :question_id => 1)
     redirect_to "/advertisements/#{get_random_advertisement}"
   end
 

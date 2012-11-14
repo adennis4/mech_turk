@@ -4,5 +4,5 @@ class Advertisement < ActiveRecord::Base
   validates :name, :presence => true
   validates :description, :presence => true
 
-  has_many :questions
+  has_one :question
 end

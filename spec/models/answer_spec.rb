@@ -2,16 +2,26 @@ require 'spec_helper'
 
 describe Answer do
   describe 'validations' do
-    it 'requires a response' do
-      Answer.new(:response => nil, :question_id => 1).should_not be_valid
+    let(:valid_attributes){ {:quantity_response => "3", :quality_response => "Yes", :question_id => 1} }
+
+    it 'requires a quantity response' do
+      Answer.new(valid_attributes.merge(:quantity_response => nil)).should_not be_valid
+    end
+
+    it 'requires a quality response' do
+      Answer.new(valid_attributes.merge(:quality_response => nil)).should_not be_valid
     end
 
     it 'requires a question_id' do
-      Answer.new(:response => 'Yes', :question_id => nil).should_not be_valid
+      Answer.new(valid_attributes.merge(:question_id => nil)).should_not be_valid
     end
 
-    it 'has a max response length of 10' do
-      Answer.new(:response => 'This is too long', :question_id => 1).should_not be_valid
+    it 'has a max quantity response length of 10' do
+      Answer.new(valid_attributes.merge(:quantity_response => 'This is too long')).should_not be_valid
+    end
+
+    it 'has a max quality response length of 40' do
+      Answer.new(valid_attributes.merge(:quality_response => 'L'*41)).should_not be_valid
     end
   end
 

@@ -14,7 +14,7 @@ describe Advertisement do
 
   describe 'associations' do
     it 'has many questions' do
-      Advertisement.new.should respond_to(:questions)
+      Advertisement.new.should respond_to(:question)
     end
   end
 end

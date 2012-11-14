@@ -1,11 +1,20 @@
-=@advertisement.name
-=@advertisement.description
+=link_to(image_tag(@advertisement.image_url), @advertisement.image_url)
+%p=@advertisement.name
+%p=@advertisement.description
 
--unless @advertisement.questions.empty?
-  -@advertisement.questions.each do |question|
+-unless @advertisement.question == nil
+  =form_for @answer do |f|
     %p
-      =question.description
-    =form_for @answer do |f|
-      =f.label :response
-      =f.text_field :response
+      ="Question:"
+      =@advertisement.question.quantity_question
+    %p
+      =f.label :quantity_response, "Answer:"
+      =f.text_field :quantity_response
+    %p
+      ="Question:"
+      =@advertisement.question.quality_question
+    %p
+      =f.label :quality_response, "Answer:"
+      =f.text_field :quality_response
+    %p
       =f.submit
