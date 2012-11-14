@@ -1,3 +1,7 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+$(document).ready ->
+  $("a").click ->
+    link_host = @href.split("/")[2]
+    document_host = document.location.href.split("/")[2]
+    unless link_host is document_host
+      window.open @href
+      false
