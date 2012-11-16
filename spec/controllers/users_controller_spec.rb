@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe UserController do
+describe UsersController do
 
   describe "GET 'welcome'" do
     it "returns http success" do
-      get 'welcome'
+      get 'new'
       response.should be_success
     end
   end
