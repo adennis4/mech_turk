@@ -2,7 +2,9 @@ require 'spec_helper'
 
 describe Answer do
   describe 'validations' do
-    let(:valid_attributes){ {:quantity_response => "3", :quality_response => "Yes", :question_id => 1} }
+    let(:valid_attributes) do
+      {:quantity_response => "3", :quality_response => "Yes", :question_id => 1}
+    end
 
     it 'requires a quantity response' do
       Answer.new(valid_attributes.merge(:quantity_response => nil)).should_not be_valid

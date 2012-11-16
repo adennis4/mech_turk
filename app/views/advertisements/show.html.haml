@@ -16,5 +16,6 @@
     %p
       =f.label :quality_response, "Answer:"
       =f.text_field :quality_response
+      =f.hidden_field :question_id, :value => @advertisement.id
     %p
       =f.submit

@@ -1,2 +1,5 @@
--@advertisements.each do |advertisement|
-  =link_to(image_tag(advertisement.image_url), advertisement_path(advertisement))
+%h1 The Psychology of Advertising
+
+%p.thumbnails
+  -@advertisements.each do |advertisement|
+    =link_to(image_tag(advertisement.image_url), advertisement_path(advertisement))
