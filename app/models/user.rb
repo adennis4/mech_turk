@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :country, :worker_id
+  attr_accessible :country, :worker_id, :answer_count
 
   validates :country, :presence => true
 
