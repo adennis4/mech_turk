@@ -13,6 +13,7 @@ end
 group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails', '~> 2.10.0'
+  gem 'cucumber-rails', require: false
 end
 
 
