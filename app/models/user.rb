@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
-  attr_accessible :country, :worker_id, :answer_count
+  attr_accessible :country, :answer_count, :worker_id
 
-  validates :country, :presence => true
+  validates_presence_of :country
+  validates_uniqueness_of :worker_id
 
   has_many :answers
+
 end

@@ -1,14 +1,10 @@
 %h1 The Psychology of Advertising
 
-=form_for @user do |f|
+=form_for user, url: users_path do |f|
   =f.label :worker_id, "Worker ID (optional):"
   =f.text_field :worker_id
   %p
   =f.label :country, "Select your Country:"
   =f.collection_select :country, International::COUNTRIES, :to_s, :to_s, :include_blank => true
-  =f.submit
+  =f.submit "Take Survey"
 
-.thumbnails
-  -@advertisements.each do |advertisement|
-    =link_to(image_tag(advertisement.image_url), advertisement.image_url)
-    

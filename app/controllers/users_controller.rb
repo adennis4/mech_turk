@@ -1,14 +1,11 @@
 class UsersController < ApplicationController
-  
-  def new
-    @advertisements = Advertisement.all
-    @user = User.new
-  end
+  expose :user
 
   def create
-    User.create(:worker_id => params[:user][:worker_id],
-                :country => params[:user][:country],
-                :answer_count => 0)
-    redirect_to advertisements_path
+    if user.save
+      redirect_to advertisements_path
+    else
+      render :new
+    end
   end
 end

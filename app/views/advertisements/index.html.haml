@@ -1,5 +1,7 @@
 %h1 The Psychology of Advertising
 
+%h2 Welcome to the Advertisement Index Page
+
 %p.thumbnails
   -@advertisements.each do |advertisement|
     =link_to(image_tag(advertisement.image_url), advertisement_path(advertisement))
