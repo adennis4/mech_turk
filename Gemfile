@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.6'
+gem 'rails', '3.2.11'
 gem 'haml-rails', '~> 0.3.4'
 gem 'pg'
+gem 'decent_exposure'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -11,20 +12,21 @@ group :development do
 end
 
 group :development, :test do
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 2.10.0'
-  gem 'cucumber-rails', require: false
 end
 
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem "therubyracer"
   gem "less-rails"
+  gem "therubyracer"
   gem "twitter-bootstrap-rails"
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails',   '~> 3.2.3'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
