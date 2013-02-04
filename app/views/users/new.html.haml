@@ -1,10 +1,72 @@
-%h1 The Psychology of Advertising
+!!! 5
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %title Psychology of Advertisement
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
+    / Le HTML5 shim, for IE6-8 support of HTML elements
+    /[if lt IE 9]
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    / Le styles
+    %link{:href => "/css/bootstrap.css", :rel => "stylesheet"}/
+    :css
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+        %link{:href => "/css/bootstrap-responsive.css", :rel => "stylesheet"}/
+    / Le fav and touch icons
+    %link{:href => "assets/favicon.ico", :rel => "shortcut icon"}/
+    %link{:href => "images/apple-touch-icon.png", :rel => "apple-touch-icon"}/
+    %link{:href => "images/apple-touch-icon-72x72.png", :rel => "apple-touch-icon", :sizes => "72x72"}/
+    %link{:href => "images/apple-touch-icon-114x114.png", :rel => "apple-touch-icon", :sizes => "114x114"}/
 
-=form_for user, url: users_path do |f|
-  =f.label :worker_id, "Worker ID (optional):"
-  =f.text_field :worker_id
-  %p
-  =f.label :country, "Select your Country:"
-  =f.collection_select :country, International::COUNTRIES, :to_s, :to_s, :include_blank => true
-  =f.submit "Take Survey"
+  %body
+    .navbar.navbar-inverse.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.brand{:href => "#"} P of A
+          .nav-collapse
+            %ul.nav
+              %li.active
+                %a{:href => "#"} Home
+              %li
+                %a{:href => "#about"} About
+              %li
+                %a{:href => "#contact"} Contact
+          / /.nav-collapse
+    .container
+      / Main hero unit for a primary marketing message or call to action
+      .hero-unit
+        %h1#welcome-title
+          Psychology of Advertisement
+        %p Effective advertising appeals to three innate emotions.
+        %p Love - Anger - Fear
+        %p#psych-image
+          =image_tag "psychology_logo.png"
+        =form_for user, url: users_path, html: { class: "form-inline", id: "new-user-form" } do |f|
+          =f.text_field :worker_id, class: "input-small", placeholder: "Worker ID"
+          =f.collection_select :country, International::COUNTRIES, :to_s, :to_s, selected: "Select Your Country"
+          =f.submit "Take Survey", class: "btn"
+
+      %h3#message Attract - Focus - Remember - Action
+      .row
+        .span3
+          %h2 Attract
+          %p Attract a consumer's attention. The advertisement should visually stand out and speak to the consumer. Step one is to draw the consumer to the message.
+        .span3
+          %h2 Focus
+          %p Focus the engaged consumer on a given message. When the consumer is engaged, it is important that the advertisement retains their attention for the duration of the message.
+        .span3
+          %h2 Remember
+          %p Ensure that the consumer remembers the message. Uniqueness and repetition are great ways to make an imprint on a consumer. It is important that the consumer remembers the message when it's time for action.
+        .span3
+          %h2 Action
+          %p Propel the consumer to take the desired action. The whole effectiveness of the ad is determined on the ability of the advertisement to act as a catalyst - causing the consumer to take an action.
+      %hr/
 

@@ -1,5 +1,6 @@
 class International < ActiveRecord::Base
   COUNTRIES = [
+  "Select Your Country",
   "Afghanistan",
   "Aland Islands",
   "Albania",
