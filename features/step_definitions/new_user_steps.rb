@@ -5,7 +5,7 @@ end
 When /^I enter my information$/ do
   visit '/'
   fill_in "user[worker_id]", with: 123
-  select "Brazil", from: "Select your Country"
+  select "Brazil", from: "user[country]"
 end
 
 Then /^I click on "(.*?)"$/ do |link_name|
