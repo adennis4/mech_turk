@@ -1,6 +1,8 @@
-%h1 The Psychology of Advertising
-
-%h2 Welcome to the Advertisement Index Page
+.hero-unit
+  %h1#welcome-title The Psychology of Advertising
+  %h3 Welcome to the Advertisement Index Page
+  %p#psych-image
+    =image_tag "psychology_logo.png"
 
 %p.thumbnails
   -@advertisements.each do |advertisement|
